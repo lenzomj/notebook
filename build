@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+if [[ ! -x "$(command -v mkdocs)" ]]; then
+  python3 -m pip install --user mkdocs mkdocs-material
+else
+    which mkdocs
+fi
+
+mkdocs build
